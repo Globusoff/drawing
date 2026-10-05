@@ -1,0 +1,326 @@
+<mxfile host="app.diagrams.net" modified="2026-09-23T10:45:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="L1_—_Физический_уровень" name="L1 — Физический уровень">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="hq" value="ЦЕНТРАЛЬНЫЙ ОФИС HQ — Консалтинговое агентство «Эксперт»" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#eaf2f8;strokeColor=#2f75b5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1030" height="760" as="geometry" />
+        </mxCell>
+
+        <mxCell id="internet" value="Публичная сеть / Internet" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="90" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="isp" value="GPON / IPoE&#10;Динамический IP" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="550" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rwan" value="R-HQ-WAN&#10;WAN-шлюз HQ" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rmain" value="R-HQ-Main&#10;Core Router" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fw1" value="МЭ-1&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fw2" value="МЭ-2&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="core" value="Ядро сети HQ&#10;VLAN routing / Trunk" style="shape=mxgraph.cisco.switches.multilayer_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sw1" value="SW-HQ-1&#10;Аналитики 1" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw2" value="SW-HQ-2&#10;Аналитики 2" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw3" value="SW-HQ-3&#10;Аналитики 3" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="460" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw4" value="SW-HQ-4&#10;Серверы / WAP" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="650" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pcs" value="25 ПК аналитиков&#10;VLAN 10 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="server" value="Файловый сервер&#10;VLAN 20 — SERVERS" style="shape=mxgraph.cisco.servers.file_server;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="waps" value="WAP-1 / WAP-2 / WAP-3 / WAP-4&#10;VLAN 30 — WLAN&#10;Band Steering" style="shape=mxgraph.cisco.wireless.access_point;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="650" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="branch" value="ФИЛИАЛ BRANCH — Региональное представительство" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#f3e5f5;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="350" width="450" height="430" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rbr" value="R-BR-Regional&#10;FlexVPN Client&#10;IKEv2" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="410" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="swbr" value="SW-BR-1&#10;802.1Q Trunk" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="410" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="branchusers" value="5 ПК консультантов&#10;VLAN 110 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="printer" value="Сетевой принтер&#10;VLAN 120 — DEVICES" style="shape=mxgraph.cisco.printers_and_peripherals.printer;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="phones" value="2 IP-телефона&#10;VLAN 130 — VOICE&#10;802.1Q / QoS" style="shape=mxgraph.cisco.phones.ip_phone;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="680" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vlanlegend" value="VLAN-план&#10;HQ: VLAN 10 USERS | VLAN 20 SERVERS | VLAN 30 WLAN | VLAN 99 MGMT&#10;Branch: VLAN 110 USERS | VLAN 120 DEVICES | VLAN 130 VOICE | VLAN 199 MGMT&#10;VoIP: 802.1Q tagging + QoS&#10;VPN: FlexVPN / IKEv2 / защищённый туннель" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="820" y="830" width="700" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="internet" target="rwan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="rwan" target="fw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="rmain" target="fw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="fw1" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="fw2" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="core" target="sw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="core" target="sw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="core" target="sw3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="core" target="sw4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="sw1" target="pcs" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="sw2" target="server" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="sw4" target="waps" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="isp" target="rbr" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="rbr" target="swbr" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="swbr" target="branchusers" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="swbr" target="printer" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="swbr" target="phones" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="vpn" value="FlexVPN / IKEv2&#10;Зашифрованный туннель&#10;VoIP-трафик проходит автоматически" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#7030a0;strokeWidth=3;fontColor=#7030a0;startArrow=none;endArrow=none;" edge="1" parent="1" source="rbr" target="rwan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+<diagram id="L2_—_Канальный_уровень" name="L2 — Канальный уровень">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="hq" value="ЦЕНТРАЛЬНЫЙ ОФИС HQ — Консалтинговое агентство «Эксперт»" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#eaf2f8;strokeColor=#2f75b5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1030" height="760" as="geometry" />
+        </mxCell>
+
+        <mxCell id="internet" value="Публичная сеть / Internet" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="90" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="isp" value="GPON / IPoE&#10;Динамический IP" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="550" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rwan" value="R-HQ-WAN&#10;WAN-шлюз HQ" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rmain" value="R-HQ-Main&#10;Core Router" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fw1" value="МЭ-1&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fw2" value="МЭ-2&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="core" value="Ядро сети HQ&#10;VLAN routing / Trunk" style="shape=mxgraph.cisco.switches.multilayer_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sw1" value="SW-HQ-1&#10;Аналитики 1" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw2" value="SW-HQ-2&#10;Аналитики 2" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw3" value="SW-HQ-3&#10;Аналитики 3" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="460" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw4" value="SW-HQ-4&#10;Серверы / WAP" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="650" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pcs" value="25 ПК аналитиков&#10;VLAN 10 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="server" value="Файловый сервер&#10;VLAN 20 — SERVERS" style="shape=mxgraph.cisco.servers.file_server;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="waps" value="WAP-1 / WAP-2 / WAP-3 / WAP-4&#10;VLAN 30 — WLAN&#10;Band Steering" style="shape=mxgraph.cisco.wireless.access_point;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="650" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="branch" value="ФИЛИАЛ BRANCH — Региональное представительство" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#f3e5f5;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="350" width="450" height="430" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rbr" value="R-BR-Regional&#10;FlexVPN Client&#10;IKEv2" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="410" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="swbr" value="SW-BR-1&#10;802.1Q Trunk" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="410" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="branchusers" value="5 ПК консультантов&#10;VLAN 110 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="printer" value="Сетевой принтер&#10;VLAN 120 — DEVICES" style="shape=mxgraph.cisco.printers_and_peripherals.printer;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="phones" value="2 IP-телефона&#10;VLAN 130 — VOICE&#10;802.1Q / QoS" style="shape=mxgraph.cisco.phones.ip_phone;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="680" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vlanlegend" value="VLAN-план&#10;HQ: VLAN 10 USERS | VLAN 20 SERVERS | VLAN 30 WLAN | VLAN 99 MGMT&#10;Branch: VLAN 110 USERS | VLAN 120 DEVICES | VLAN 130 VOICE | VLAN 199 MGMT&#10;VoIP: 802.1Q tagging + QoS&#10;VPN: FlexVPN / IKEv2 / защищённый туннель" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="820" y="830" width="700" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="internet" target="rwan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;" value="WAN / IPoE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="rwan" target="fw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q / Transit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="rmain" target="fw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q / Transit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="fw1" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="fw2" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="core" target="sw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="core" target="sw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="core" target="sw3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="core" target="sw4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="sw1" target="pcs" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Access VLAN 10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="sw2" target="server" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Access VLAN 20"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="sw4" target="waps" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Trunk VLAN 30"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="isp" target="rbr" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;" value="GPON / IPoE"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="rbr" target="swbr" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="802.1Q Trunk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="swbr" target="branchusers" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Access VLAN 110"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="swbr" target="printer" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Access VLAN 120"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="swbr" target="phones" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="Voice VLAN 130"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="vpn" value="FlexVPN / IKEv2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#7030a0;strokeWidth=3;fontColor=#7030a0;startArrow=none;endArrow=none;" edge="1" parent="1" source="rbr" target="rwan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+<diagram id="L3_—_Сетевой_уровень_/_VLAN_и_IP" name="L3 — Сетевой уровень / VLAN и IP">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="hq" value="ЦЕНТРАЛЬНЫЙ ОФИС HQ — Консалтинговое агентство «Эксперт»" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#eaf2f8;strokeColor=#2f75b5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1030" height="760" as="geometry" />
+        </mxCell>
+
+        <mxCell id="internet" value="Публичная сеть / Internet" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="90" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="isp" value="GPON / IPoE&#10;Динамический IP" style="shape=cloud;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="550" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rwan" value="R-HQ-WAN&#10;WAN-шлюз HQ" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rmain" value="R-HQ-Main&#10;Core / L3" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fw1" value="МЭ-1&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fw2" value="МЭ-2&#10;HQ Firewall" style="shape=mxgraph.cisco.security.firewall;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="core" value="CORE-SW / L3&#10;Inter-VLAN Routing" style="shape=mxgraph.cisco.switches.multilayer_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sw1" value="SW-HQ-1&#10;Аналитики 1" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw2" value="SW-HQ-2&#10;Аналитики 2" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw3" value="SW-HQ-3&#10;Аналитики 3" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="460" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="sw4" value="SW-HQ-4&#10;Серверы / WAP" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="650" y="540" width="150" height="75" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pcs" value="25 ПК аналитиков&#10;VLAN 10 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="server" value="Файловый сервер&#10;VLAN 20 — SERVERS" style="shape=mxgraph.cisco.servers.file_server;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="waps" value="WAP-1 / WAP-2 / WAP-3 / WAP-4&#10;VLAN 30 — WLAN&#10;Band Steering" style="shape=mxgraph.cisco.wireless.access_point;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="650" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="branch" value="ФИЛИАЛ BRANCH — Региональное представительство" style="swimlane;html=1;rounded=1;horizontal=0;startSize=30;fillColor=#f3e5f5;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="350" width="450" height="430" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rbr" value="R-BR-Regional&#10;FlexVPN Client / IKEv2" style="shape=mxgraph.cisco.routers.router;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="410" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="swbr" value="SW-BR-1&#10;802.1Q Trunk" style="shape=mxgraph.cisco.switches.workgroup_switch;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="410" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="branchusers" value="5 ПК консультантов&#10;VLAN 110 — USERS" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="printer" value="Сетевой принтер&#10;VLAN 120 — DEVICES" style="shape=mxgraph.cisco.printers_and_peripherals.printer;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="570" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="phones" value="2 IP-телефона&#10;VLAN 130 — VOICE&#10;802.1Q / QoS" style="shape=mxgraph.cisco.phones.ip_phone;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="680" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="vlanlegend" value="VLAN-план&#10;HQ: VLAN 10 USERS | VLAN 20 SERVERS | VLAN 30 WLAN | VLAN 99 MGMT&#10;Branch: VLAN 110 USERS | VLAN 120 DEVICES | VLAN 130 VOICE | VLAN 199 MGMT&#10;VoIP: 802.1Q tagging + QoS&#10;VPN: FlexVPN / IKEv2 / защищённый туннель" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="820" y="830" width="700" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="internet" target="rwan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;" value="WAN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="rwan" target="fw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="Transit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="rmain" target="fw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="Transit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="fw1" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="L3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="fw2" target="core" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="L3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="core" target="sw1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="VLAN 10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="core" target="sw2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="VLAN 20"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="core" target="sw3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="VLAN 10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="core" target="sw4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="VLAN 30"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="sw1" target="pcs" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.10.x"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="sw2" target="server" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.20.10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="sw4" target="waps" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.30.x"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="isp" target="rbr" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeWidth=2;startArrow=none;endArrow=none;" value="DHCP / dynamic"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="rbr" target="swbr" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=none;endArrow=none;" value="Inter-VLAN"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="swbr" target="branchusers" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.110.x"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="swbr" target="printer" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.120.10"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="swbr" target="phones" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;endArrow=none;" value="10.23.130.x"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="vpn" value="10.23.254.2 ↔ 10.23.254.1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeColor=#7030a0;strokeWidth=3;fontColor=#7030a0;startArrow=none;endArrow=none;" edge="1" parent="1" source="rbr" target="rwan">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      <mxCell id="addr1" value="HQ VLAN 10 USERS — 10.23.10.0/24 — GW 10.23.10.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="60" y="805" width="230" height="70" as="geometry" /></mxCell><mxCell id="addr2" value="HQ VLAN 20 SERVERS — 10.23.20.0/24 — GW 10.23.20.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="305" y="805" width="240" height="70" as="geometry" /></mxCell><mxCell id="addr3" value="HQ VLAN 30 WLAN — 10.23.30.0/24 — GW 10.23.30.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="560" y="805" width="230" height="70" as="geometry" /></mxCell><mxCell id="addr4" value="HQ VLAN 99 MGMT — 10.23.99.0/24 — GW 10.23.99.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="815" y="805" width="240" height="70" as="geometry" /></mxCell><mxCell id="addr5" value="BR VLAN 110 USERS — 10.23.110.0/24 — GW 10.23.110.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1080" y="800" width="250" height="70" as="geometry" /></mxCell><mxCell id="addr6" value="BR VLAN 120 DEVICES — 10.23.120.0/24 — GW 10.23.120.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1340" y="800" width="230" height="70" as="geometry" /></mxCell><mxCell id="addr7" value="BR VLAN 130 VOICE — 10.23.130.0/24 — GW 10.23.130.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1080" y="885" width="250" height="70" as="geometry" /></mxCell><mxCell id="addr8" value="BR VLAN 199 MGMT — 10.23.199.0/24 — GW 10.23.199.1" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1340" y="885" width="230" height="70" as="geometry" /></mxCell><mxCell id="vpnaddr" value="FlexVPN: 10.23.254.0/30 — HQ 10.23.254.1 ↔ BR 10.23.254.2 — IKEv2" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#7030a0;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="680" y="185" width="350" height="75" as="geometry" /></mxCell><mxCell id="wanaddr" value="Branch WAN: GPON + IPoE — DHCP / dynamic address" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="1170" y="275" width="300" height="55" as="geometry" /></mxCell></root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
