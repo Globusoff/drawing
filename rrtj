@@ -1,0 +1,73 @@
+
+def encrypt(text, key):
+	text = text.replace(" ", "").upper()
+	key = key.upper()
+
+	n = len(key)
+	if n == 0:
+		raise ValueError("Ключ не может быть пустым")
+
+	while len(text) % n != 0:
+		text += "_"
+
+	result = ""
+
+	for i in range(0, len(text), n):
+		block = text[i:i + n]
+		order = sorted(range(n), key=lambda x: (key[x], x))
+
+		for k in order:
+			result += block[k]
+
+	return result
+
+
+def decrypt(text, key):
+	key = key.upper()
+	n = len(key)
+
+	if n == 0:
+		raise ValueError("Ключ не может быть пустым")
+
+	order = sorted(range(n), key=lambda x: (key[x], x))
+	result = ""
+
+	if len(text) % n != 0:
+		raise ValueError("Длина текста не соответствует ключу")
+
+	for i in range(0, len(text), n):
+		block = text[i:i + n]
+		original = [""] * n
+
+		for j, k in enumerate(order):
+			original[k] = block[j]
+
+		result += "".join(original)
+
+	return result.rstrip("_")
+
+
+def main():
+	try:
+		text = input("Введите текст: ")
+		key = input("Введите ключевое слово: ")
+
+		if not text or not key:
+			raise ValueError("Текст и ключ не должны быть пустыми")
+
+		encrypted = encrypt(text, key)
+		print("Зашифрованный текст:", encrypted)
+
+		decrypted = decrypt(encrypted, key)
+		print("Расшифрованный текст:", decrypted)
+
+	except ValueError as e:
+		print("Ошибка:", e)
+	except KeyboardInterrupt:
+		print("\nПрограмма прервана пользователем")
+	except Exception as e:
+		print("Непредвиденная ошибка:", e)
+
+
+if __name__ == "__main__":
+	main()
