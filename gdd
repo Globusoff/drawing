@@ -1,0 +1,46 @@
+
+def encrypt(text, key):
+    text = text.replace(" ", "").upper()
+    key = key.upper()
+
+    n = len(key)
+    while len(text) % n != 0:
+        text += "_"
+
+    result = ""
+
+    for i in range(0, len(text), n):
+        block = text[i:i + n]
+        for k in sorted(range(n), key=lambda x: key[x]):
+            result += block[k]
+
+    return result
+
+
+def decrypt(text, key):
+    key = key.upper()
+    n = len(key)
+    result = ""
+
+    order = sorted(range(n), key=lambda x: key[x])
+
+    for i in range(0, len(text), n):
+        block = text[i:i + n]
+        original = [""] * n
+
+        for j, k in enumerate(order):
+            original[k] = block[j]
+
+        result += "".join(original)
+
+    return result.rstrip("_")
+
+
+text = input("Введите текст: ")
+key = input("Введите ключевое слово: ")
+
+encrypted = encrypt(text, key)
+print("Зашифрованный текст:", encrypted)
+
+decrypted = decrypt(encrypted, key)
+print("Расшифрованный текст:", decrypted)
