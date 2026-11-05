@@ -1,0 +1,70 @@
+
+from math import gcd
+
+
+ALPHABET = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+
+
+def encrypt(text, a, b):
+	result = ""
+
+	for char in text.upper():
+		if char in ALPHABET:
+			x = ALPHABET.index(char)
+			y = (a * x + b) % len(ALPHABET)
+			result += ALPHABET[y]
+		else:
+			result += char
+
+	return result
+
+
+def decrypt(text, a, b):
+	result = ""
+	m = len(ALPHABET)
+	a_inv = pow(a, -1, m)
+
+	for char in text.upper():
+		if char in ALPHABET:
+			y = ALPHABET.index(char)
+			x = (a_inv * (y - b)) % m
+			result += ALPHABET[x]
+		else:
+			result += char
+
+	return result
+
+
+def main():
+	try:
+		text = input("Введите текст: ")
+		a = int(input("Введите ключ a: "))
+		b = int(input("Введите ключ b: "))
+
+		m = len(ALPHABET)
+
+		if not text:
+			raise ValueError("Текст не должен быть пустым")
+
+		if gcd(a, m) != 1:
+			raise ValueError("Ключ a должен быть взаимно простым с длиной алфавита")
+
+		if not 0 <= b < m:
+			raise ValueError(f"Ключ b должен быть от 0 до {m - 1}")
+
+		encrypted = encrypt(text, a, b)
+		print("Зашифрованный текст:", encrypted)
+
+		decrypted = decrypt(encrypted, a, b)
+		print("Расшифрованный текст:", decrypted)
+
+	except ValueError as e:
+		print("Ошибка:", e)
+	except KeyboardInterrupt:
+		print("\nПрограмма прервана пользователем")
+	except Exception as e:
+		print("Непредвиденная ошибка:", e)
+
+
+if __name__ == "__main__":
+	main()
