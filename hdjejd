@@ -1,1 +1,12 @@
-rr
+function simulateMouseClick(targetNode) {    function triggerMouseEvent(targetNode, eventType) {
+        var clickEvent = document.createEvent('MouseEvents');        clickEvent.initEvent(eventType, true, true);
+        targetNode.dispatchEvent(clickEvent);    }
+    ["dblclick", "mouseover", "mousedown", "mouseup", "click"].forEach(function(eventType) {         triggerMouseEvent(targetNode, eventType);
+    });}
+
+
+
+
+
+setInterval(  async () => {simulateMouseClick(document.querySelector("div._main-coin_x4wyq_685")); 
+}, 68);
